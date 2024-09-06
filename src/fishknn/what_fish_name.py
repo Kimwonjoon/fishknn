@@ -54,6 +54,11 @@ def fish_pred(l:float,w:float, fish_class:int):
         print(f"예측값 : {fish_pred_name}")
         return True
     else:
+        # 데이터가 너무 적으면 오답이여도 넣은게 좋아보입니다.
+        if len(df) < 50:
+            new_df = pd.DataFrame({'length' : [l], "weight" : [w], "label" : [fish_class]})
+            df = pd.concat([df, new_df], ignore_index=True)
+            df.to_csv(file_path, index=False)
         print(f"오답입니다. 정답은 {fish_real_name}입니다.")
         print(f"예측값 : {fish_pred_name}")
         return True
