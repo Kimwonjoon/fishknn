@@ -17,3 +17,7 @@ license = {text = "MIT"}
 
 [tool.pdm]
 distribution = true
+
+[project.urls]
+Homepage = "https://github.com/Kimwonjoon/fishknn"
+Issues = "https://github.com/Kimwonjoon/fishknn/issues"
