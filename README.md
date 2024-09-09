@@ -10,6 +10,8 @@ $ t_cmd
 ```bash
 $ scat_plot
 ```
+### Result
+![Figure_1](https://github.com/user-attachments/assets/e7cc3be0-30a6-4418-a9e7-96d4576f1584)
 
 ## Usage - python
 ```python
