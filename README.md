@@ -1,6 +1,17 @@
 # fishknn
 
-## Usage
+## Usage - bash
+### 예측 및 데이터 저장
+```bash
+$ t_cmd
+```
+
+### 시각화
+```bash
+$ scat_plot
+```
+
+## Usage - python
 ```python
 from fishknn.what_fish_name import fish_pred
 
@@ -30,4 +41,10 @@ fish_pred(6.7, 9.3, 1)
 # result
 오답입니다. 정답은 Smelt입니다.
 예측값 : Bream
+```
+
+### Data Plot
+```python
+from fishknn.what_fish_name import watch_data
+watch_data()
 ```
