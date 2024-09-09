@@ -1,15 +1,28 @@
 import pandas as pd
 import os
-
+import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
-# import sys
+#import sys
 
 home_path = os.path.expanduser('~')
-file_path = f"{home_path}/code/fishknn/data/fish.csv"
+file_path = f"{home_path}/data/fishpip/fish.csv"
 
-# l = sys.argv[1] # 길이
-# w = sys.argv[2] # 무게
-# fish_class = sys.argv[3] # 정답
+#l = sys.argv[1] # 길이
+#w = sys.argv[2] # 무게
+#fish_class = sys.argv[3] # 정답
+
+def watch_data():
+    df = pd.read_csv(file_path)
+    df_b = df[df['label'] == 0]
+    df_s = df[df['label'] == 1]
+
+    fig, ax = plt.subplots()
+    _=ax.scatter(df_b['length'], df_b['weight'], label = 'Bream', c = 'r', edgecolor = 'black')
+    _=ax.scatter(df_s['length'], df_s['weight'], label = 'Smelt', c = 'b', edgecolor = 'black')
+    _=ax.set_xlabel('length')
+    _=ax.set_ylabel('weight')
+    _=ax.legend()
+    plt.show()
 
 def fish_pred(l:float,w:float, fish_class:int):
     if fish_class == 0:
